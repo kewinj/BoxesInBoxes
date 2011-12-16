@@ -1,0 +1,135 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:my="clr-namespace:VCork" xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions" x:Name="CorkBoard" x:Class="VCork.MainPage" mc:Ignorable="d" 
+	 RenderTransformOrigin="0.5,0.5" d:DesignHeight="1417" d:DesignWidth="1846" xmlns:my1="clr-namespace:DragDockPanelSample;assembly=DragDockPanelSample" xmlns:my2="clr-namespace:System;assembly=mscorlib">
+	<UserControl.Resources>
+		<Storyboard x:Name="Intro">
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="CorkBoard">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+				<EasingDoubleKeyFrame KeyTime="0:0:2" Value="1">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="CorkBoard">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+				<EasingDoubleKeyFrame KeyTime="0:0:2" Value="1">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+		</Storyboard>
+	</UserControl.Resources>
+	<UserControl.RenderTransform>
+		<CompositeTransform/>
+	</UserControl.RenderTransform>
+
+	<i:Interaction.Triggers>
+		<i:EventTrigger>
+			<ei:ControlStoryboardAction Storyboard="{StaticResource Intro}"/>
+		</i:EventTrigger>
+	</i:Interaction.Triggers>
+	<StackPanel HorizontalAlignment="Left"  Name="LayoutRoot" VerticalAlignment="Top" Orientation="Horizontal">
+		<StackPanel HorizontalAlignment="Left" Name="Tools" Orientation="Vertical" Margin="8,8,8,8" MaxWidth="160" >
+			<Button Content="Hello"></Button>
+			<TextBlock Text="This is some information..." TextWrapping="Wrap" Margin="8,8,8,8"></TextBlock>
+			<TextBlock Text="This is some more information..." TextWrapping="Wrap" Margin="8,8,8,8"></TextBlock>
+		</StackPanel>
+		<Grid x:Name="Corkboard" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="1400" Width="1700" ShowGridLines="True" MouseWheel="OnMouseWheel" MouseMove="OnMouseMove" MouseLeftButtonDown="UserControlMouseLeftButtonDown" MouseLeftButtonUp="UserControlMouseLeftButtonUp" MouseLeave="UserControlMouseLeave" RenderTransformOrigin="0.5,0.5">
+			<Grid.RowDefinitions>
+				<RowDefinition />
+				<RowDefinition />
+				<RowDefinition />
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition />
+				<ColumnDefinition />
+				<ColumnDefinition />
+			</Grid.ColumnDefinitions>
+			<Grid.Resources>
+				<Storyboard x:Name="ZoomStoryboard">
+					<DoubleAnimation x:Name="ZoomAnimationX"
+					Storyboard.TargetName="Corkboard"
+					Storyboard.TargetProperty="Canvas.RenderTransform.TransformGroup.Children[0].ScaleX"
+					Duration="0:0:1" >
+						<DoubleAnimation.EasingFunction>
+							<ExponentialEase Exponent="6" EasingMode="EaseOut"/>
+						</DoubleAnimation.EasingFunction>
+					</DoubleAnimation>
+
+					<DoubleAnimation x:Name="ZoomAnimationY"
+					Storyboard.TargetName="Corkboard"
+					Storyboard.TargetProperty="Canvas.RenderTransform.TransformGroup.Children[0].ScaleY"
+					Duration="0:0:1" >
+						<DoubleAnimation.EasingFunction>
+							<ExponentialEase Exponent="6" EasingMode="EaseOut"/>
+						</DoubleAnimation.EasingFunction>
+					</DoubleAnimation>
+
+					<DoubleAnimation x:Name="ZoomCenterAnimationX"
+					Storyboard.TargetName="Corkboard"
+					Storyboard.TargetProperty="Canvas.RenderTransform.TransformGroup.Children[0].CenterX" 
+					Duration="0:0:0" >
+					</DoubleAnimation>
+
+					<DoubleAnimation x:Name="ZoomCenterAnimationY"
+					Storyboard.TargetName="Corkboard"
+					Storyboard.TargetProperty="Canvas.RenderTransform.TransformGroup.Children[0].CenterY" 
+					Duration="0:0:0" >
+					</DoubleAnimation>
+				</Storyboard>
+
+				<Storyboard x:Name="TranslateStoryboard">
+
+					<DoubleAnimation x:Name="TranslateX"
+					Storyboard.TargetName="Corkboard"
+					Storyboard.TargetProperty="Canvas.RenderTransform.TransformGroup.Children[1].X"
+					Duration="0:0:0.5" >
+						<DoubleAnimation.EasingFunction>
+							<ExponentialEase Exponent="6" EasingMode="EaseOut"/>
+						</DoubleAnimation.EasingFunction>
+					</DoubleAnimation>
+					<DoubleAnimation x:Name="TranslateY"
+					Storyboard.TargetName="Corkboard"
+					Storyboard.TargetProperty="Canvas.RenderTransform.TransformGroup.Children[1].Y"
+					Duration="0:0:0.5" >
+						<DoubleAnimation.EasingFunction>
+							<ExponentialEase Exponent="6" EasingMode="EaseOut"/>
+						</DoubleAnimation.EasingFunction>
+					</DoubleAnimation>
+				</Storyboard>
+			</Grid.Resources>
+			<Grid.Background>
+				<ImageBrush ImageSource="/VCork;component/Resources/Corkboard/250728_9320.jpg"  />
+			</Grid.Background>
+			<Grid.RenderTransform>
+				<TransformGroup>
+					<ScaleTransform x:Name="ScaleTransform" />
+					<TranslateTransform x:Name="TranslateTransform" X="0" Y="0"/>
+				</TransformGroup>
+			</Grid.RenderTransform>
+			<my:StoryCard HorizontalAlignment="Left"  x:Name="silverlightControl1" VerticalAlignment="Top" Height="164" Width="272"   StoryText="As a user i want my story cards to be movable" Margin="153,48,0,0" Grid.Row="2" />
+			<my:StoryCard HorizontalAlignment="Left"  x:Name="silverlightControl9" VerticalAlignment="Top" Height="146" Width="250"  StoryText="As a user I want my tasks to be movable" Margin="180,124,0,0" Grid.Row="1" />
+			<my:StoryCard HorizontalAlignment="Left"  x:Name="silverlightControl10" VerticalAlignment="Top" Height="142" Width="258"  StoryText="As a user I want a swanky shiny UI!" Margin="213,173,0,0" />
+		   
+			<my1:DragDockPanelHost Grid.Column="1" HorizontalAlignment="Stretch"  Name="dragDockPanelHost1" VerticalAlignment="Stretch" Grid.Row="0" MouseLeftButtonDown="dragDockPanelHost_MouseLeftButtonDown"></my1:DragDockPanelHost>
+            <my1:DragDockPanelHost Grid.Column="1" HorizontalAlignment="Stretch"  Name="dragDockPanelHost2" VerticalAlignment="Stretch" Grid.Row="1" MouseLeftButtonDown="dragDockPanelHost_MouseLeftButtonDown"></my1:DragDockPanelHost>
+            <my1:DragDockPanelHost Grid.Column="2" HorizontalAlignment="Stretch"  Name="dragDockPanelHost3" VerticalAlignment="Stretch" Grid.Row="1" MouseLeftButtonDown="dragDockPanelHost_MouseLeftButtonDown" Margin="6,0,-7,0"></my1:DragDockPanelHost>
+            <my1:DragDockPanelHost Grid.Column="2" HorizontalAlignment="Stretch"  Name="dragDockPanelHost4" VerticalAlignment="Stretch" Grid.Row="0" MouseLeftButtonDown="dragDockPanelHost_MouseLeftButtonDown" Margin="6,0,-7,0"></my1:DragDockPanelHost>
+		</Grid>
+	</StackPanel>
+
+</UserControl>

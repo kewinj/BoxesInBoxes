@@ -1,0 +1,21 @@
+﻿<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:MyControlLibrary"
+    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions" x:Class="MyControlLibrary.SubGrid"
+    mc:Ignorable="d"
+    d:DesignHeight="300" d:DesignWidth="400">
+    
+    <Grid x:Name="LayoutRoot" Background="Transparent" ShowGridLines="True" VerticalAlignment="Stretch">
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Top" >
+            <StackPanel Orientation="Vertical" VerticalAlignment="Top" Margin="10,10,0,10" >
+                <local:TaskCard Height="125" Width="210" />
+                <Button Content="Add Task" Height="25" x:Name="AddButton" Click="AddButton_Click" />
+            </StackPanel>
+            
+            <local:RearrangableGridCanvas x:Name="Tasks" Height="150" Width="900" Margin="10,10,0,10" Canvas.ZIndex="0"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

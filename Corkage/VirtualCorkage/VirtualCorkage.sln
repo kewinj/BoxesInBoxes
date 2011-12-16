@@ -1,0 +1,59 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirtualCorkage", "VirtualCorkage\VirtualCorkage.csproj", "{F983FE9A-E947-4C88-BBB5-5B21FCEA5842}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirtualCorkage.Web", "VirtualCorkage.Web\VirtualCorkage.Web.csproj", "{EF90C738-F55B-4421-ABED-27245B74780D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyControlLibrary", "MyControlLibrary\MyControlLibrary.csproj", "{50B6BA66-50E9-45F2-AA19-47D8D44B739D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Misc", "Misc", "{5630276A-CA64-4BE4-AA04-466F09324111}"
+	ProjectSection(SolutionItems) = preProject
+		corkage sql script.sql = corkage sql script.sql
+		productBacklog.txt = productBacklog.txt
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RIATest", "RIATest\RIATest.csproj", "{4736D7BD-BEF0-47A4-9894-C3C87F91CA07}"
+	ProjectSection(ProjectDependencies) = postProject
+		{EF90C738-F55B-4421-ABED-27245B74780D} = {EF90C738-F55B-4421-ABED-27245B74780D}
+		{58696A7A-E084-45AC-8305-EE2D3EEA4E28} = {58696A7A-E084-45AC-8305-EE2D3EEA4E28}
+		{58696A7A-E084-45AC-8305-EE2D3EEA4E28} = {58696A7A-E084-45AC-8305-EE2D3EEA4E28}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RIATest.Web", "RIATest.Web\RIATest.Web.csproj", "{58696A7A-E084-45AC-8305-EE2D3EEA4E28}"
+EndProject
+Global
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F983FE9A-E947-4C88-BBB5-5B21FCEA5842}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F983FE9A-E947-4C88-BBB5-5B21FCEA5842}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F983FE9A-E947-4C88-BBB5-5B21FCEA5842}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F983FE9A-E947-4C88-BBB5-5B21FCEA5842}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF90C738-F55B-4421-ABED-27245B74780D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF90C738-F55B-4421-ABED-27245B74780D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF90C738-F55B-4421-ABED-27245B74780D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF90C738-F55B-4421-ABED-27245B74780D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50B6BA66-50E9-45F2-AA19-47D8D44B739D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50B6BA66-50E9-45F2-AA19-47D8D44B739D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50B6BA66-50E9-45F2-AA19-47D8D44B739D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50B6BA66-50E9-45F2-AA19-47D8D44B739D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4736D7BD-BEF0-47A4-9894-C3C87F91CA07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4736D7BD-BEF0-47A4-9894-C3C87F91CA07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4736D7BD-BEF0-47A4-9894-C3C87F91CA07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4736D7BD-BEF0-47A4-9894-C3C87F91CA07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58696A7A-E084-45AC-8305-EE2D3EEA4E28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58696A7A-E084-45AC-8305-EE2D3EEA4E28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58696A7A-E084-45AC-8305-EE2D3EEA4E28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58696A7A-E084-45AC-8305-EE2D3EEA4E28}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
