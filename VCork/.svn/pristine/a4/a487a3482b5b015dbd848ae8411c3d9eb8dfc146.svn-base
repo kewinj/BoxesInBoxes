@@ -1,0 +1,46 @@
+As a user, I want to zoom and pan the corkboard
+As a user, I want to add a story to the corkboard
+As a user, I want to add a task to the corkboard
+As a user, I want to modify the text on a story on the corkboard
+As a user, I want to modify the text on a task on the corkbaord
+As a user, I want to rearrange the tasks for a particular story to put them in order
+As a user, I want to change the category of a task for a particular story (todo->in progress) via UI dragging
+As a user, I want to remove a task from a story (and from the corkboard)
+As a user, I want to rearrange the story order (including tasks) on the corkboard (up & down)
+As a user, I want to remove a story (and its associated tasks) from the corkboard
+As a user, I want to pre-populate the stories and tasks on the corkboard from an external data source (XML)
+As a user, I want to have RIA services hooked up with the corkboard
+As a user, I want to view the corkboard with multiple other users making changes on the fly
+As a user, I want I want to move a task from one story to another story
+As a user, I want to add new task categories to place my tasks in
+As a user, I want to be able to move categories around on the corkboard (left-right) UI dragging
+As a user, I want to the corkboard to resize for stories & tasks (wrt minimum size) 
+As a user, I can resize column widths & row heights on my coarkboard, accordingly (automated solution first)
+As a user, I want ot reset my corkboard layout (auto arrange)
+
+
+Sprint 1: 3rd Nov 2010 to 7th Nov 2010
+======================================
+
+As a user, I want to zoom and pan the corkboard
+[JK]/	Sort out problem with capture mouse on corkboard (make corkboard a control?) 
+[JK]/	Allow user to adjust easing functions & timings via xaml (dep. properties)
+[JK]/	Try and get the full size corkboard shown (so that its not clipped but always the same size)
+	
+		
+As a user, I want to add a story to the corkboard
+[JK]/	Add story to the task board (kinda already done)
+[JK]/	Put an image on the background of the story (5x3 card?)
+[JK]/	Stop user from adding too many stories? Could put a limit on it for now (set max# stories on corkboard?)
+[JK]	Allow user to adjust text on story card (don't bother with story points)
+	Stop user from typing in too much text
+
+	
+	
+	
+As a user, I want to add a task to the corkboard
+	Prevent user from adding too many tasks (cat1 error) (eventually this should be a resize)
+	Put an image on the background of a task (piece of paper?)
+	Prevent user from adding too much text to task
+	Allow user to move tasks around
+	
